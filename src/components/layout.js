@@ -1,56 +1,43 @@
 import React from "react"
 import { Link } from "gatsby"
+import logo from '../../static/logo.png'
+import styled from 'styled-components'
+import { rhythm } from "../utils/typography"
 
-import { rhythm, scale } from "../utils/typography"
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 1rem;
+  margin: auto;
+  padding-left: 1rem;
+  box-shadow: none;
+  color: #33cc33;
+`
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
-
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
+    const {children} = this.props
+    let header = (
+      <div style={{
+        textAlign: 'center',
+      }}>
+        <Link
           style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
+            boxShadow: `none`,
+            textDecoration: `none`,
+            color: `inherit`,
           }}
+          to={`/`}
         >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
+          <img src={logo} alt=''/>
+        </Link>
+        <StyledLink to={`/`}>Notizie</StyledLink>
+        <StyledLink to={`/approfondimenti/`}>Approfondimenti</StyledLink>
+        <StyledLink to={`/focus/`}>Focus</StyledLink>
+        <StyledLink to={`/infermeria/`}>Infermeria</StyledLink>
+        <StyledLink to={`/statistiche/`}>Statistiche</StyledLink>
+      </div>
+    )
     return (
       <div
         style={{
