@@ -4,14 +4,16 @@ import logo from '../../static/logo.png'
 import styled from 'styled-components'
 import { rhythm } from "../utils/typography"
 
+
 const StyledLink = styled(Link)`
-  text-decoration: none;
-  font-weight: normal;
-  font-size: 1rem;
-  margin: auto;
-  padding-left: 1rem;
+  color: white;
   box-shadow: none;
-  color: #33cc33;
+  padding-top: 10%;
+  padding-left: 1rem;
+  margin: 1rem;
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 class Layout extends React.Component {
@@ -19,7 +21,13 @@ class Layout extends React.Component {
     const {children} = this.props
     let header = (
       <div style={{
-        textAlign: 'center',
+        backgroundColor: '#27aa80',
+        maxHeight: '200px',
+        //textAlign: 'center',
+      }}> 
+      <div style={{
+        display: 'flex',
+        textAlign: 'left',
       }}>
         <Link
           style={{
@@ -29,13 +37,27 @@ class Layout extends React.Component {
           }}
           to={`/`}
         >
-          <img src={logo} alt=''/>
+          <img src={logo} alt='' //height='150' width='150'
+            style={{
+              maxWidth: '200px',
+              borderRadius: 50,
+            }}
+          />
         </Link>
-        <StyledLink to={`/`}>Notizie</StyledLink>
-        <StyledLink to={`/approfondimenti/`}>Approfondimenti</StyledLink>
-        <StyledLink to={`/focus/`}>Focus</StyledLink>
-        <StyledLink to={`/infermeria/`}>Infermeria</StyledLink>
-        <StyledLink to={`/statistiche/`}>Statistiche</StyledLink>
+      
+          <StyledLink to={`/`}>Home</StyledLink>
+          <StyledLink to={`/Asta/`}>Asta</StyledLink>
+          <StyledLink to={`/focus/`}>Consigli</StyledLink>
+          <StyledLink to={`/statistiche/`}>Notizie</StyledLink>
+
+          {/*
+          <span style={{
+            width: '100%',
+            display: 'inline-block',
+          }}> 
+        </span> */}
+
+        </div>
       </div>
     )
     return (

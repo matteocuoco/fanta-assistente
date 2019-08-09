@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
 const StyledLink = styled(Link)`
-  color: #33cc33;
+  color: #27aa80;
 `
 
 class BlogIndex extends React.Component {
