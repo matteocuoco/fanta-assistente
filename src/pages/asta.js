@@ -55,7 +55,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: {frontmatter:{tags:{in:["Focus"]}}}
+      filter: {frontmatter:{tags:{in:["asta"]}}}
       ) {
       edges {
         node {

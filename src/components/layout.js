@@ -46,9 +46,9 @@ class Layout extends React.Component {
         </Link>
       
           <StyledLink to={`/`}>Home</StyledLink>
-          <StyledLink to={`/Asta/`}>Asta</StyledLink>
-          <StyledLink to={`/focus/`}>Consigli</StyledLink>
-          <StyledLink to={`/statistiche/`}>Notizie</StyledLink>
+          <StyledLink to={`/asta/`}>Asta</StyledLink>
+          <StyledLink to={`/consigli/`}>Consigli</StyledLink>
+          <StyledLink to={`/notizie/`}>Notizie</StyledLink>
 
           {/*
           <span style={{
@@ -72,9 +72,9 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()}, Creato da
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.gatsbyjs.org">Matteo Cuoco</a>
         </footer>
       </div>
     )
